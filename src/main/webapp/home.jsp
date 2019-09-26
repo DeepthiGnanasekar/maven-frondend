@@ -1,11 +1,12 @@
-<html>
-<head>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-</head>
-<body>
-<h1>Welcome to Revature WaterCan Plant Services</h1>
-<a href="admin.jsp">Admin_Login</a><br>
-<a href="login.jsp">User_Login</a><br>
-<a href="newUser.jsp">Register</a>
-</body></html>
+
+<div class="img">
+<form>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br><br>
+<div class="c">Water is Life!!!</div>
+<div class="c">Clean Water means Health...!!!</div>
+<div class="c">And we care your health- Revature WaterCan Services...!!!</div><br><br>
+<a class="anchor-style" href="?pageName=admin.jsp">Admin_Login</a><br>
+<a class="anchor-style" href="?pageName=login.jsp">User_Login</a><br>
+<a class="anchor-style" href="?pageName=register.jsp">Register</a>
+</form>
+</div>

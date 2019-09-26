@@ -8,12 +8,12 @@
 function canReserveOrder()
 {
 alert("Your reserved cans has been Ordered Sucessfully...!!!");
-window.location.href = "canSetUp.jsp";}
+window.location.href = "?pageName=canSetUp.jsp";}
 </script>
-<h1>Welcome to Revature WaterCan Plant Services</h1>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
 <p>Do you want to order your reserved Cans :</p>
 <input type = "button" value = "Yes" class="btn btn-success" onclick=canReserveOrder()>
-<input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = 'canSetUp.jsp';">
-<input type = "button" value = "Modify the reserve" class="btn btn-danger" onclick="window.location.href = 'reserveSetUp.jsp';">
+<input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = '?pageName=canSetUp.jsp';">
+<input type = "button" value = "Modify the reserve" class="btn btn-danger" onclick="window.location.href = '?pageName=reserveSetUp.jsp';">
 </body>
 </html>

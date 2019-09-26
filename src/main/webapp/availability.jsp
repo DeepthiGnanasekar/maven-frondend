@@ -25,7 +25,8 @@ function viewStock()
 }
 </script>
 </head>
-<body>
+<body style="text-align: center">
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
    <div id="stock-section">
        <table border="1" class="table table-condensed">
            <thead>
@@ -41,6 +42,12 @@ function viewStock()
    <script>
    viewStock();
 </script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<button onclick="goBack()" class="btn btn-warning">Go Back</button>
 </body>
 </html>
 

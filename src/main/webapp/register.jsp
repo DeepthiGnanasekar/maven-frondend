@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/bootstrap.min.css"></link>
 <script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script>
+
 function register()
 {
 	event.preventDefault();
@@ -17,40 +16,40 @@ function register()
     $.get(url, function(response){
     console.log(response);
     var data=JSON.parse(response);
-    //if(data==null) 
         if ( data.errorMessage != null){
-    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
-     	window.location.href= "register.jsp";
+    	alert(data.errorMessage);
+     	window.location.href= "?pageName=register.jsp";
     	}
     else
         {
     	 alert("Registered successfully...!!! You can Login at anytime...!!!");    
-     	window.location.href= "index.jsp";
+     	window.location.href= "?pageName=home.jsp";
         }
-       
     });
 }
 </script>
 </head>
-<body style="text-align:center;">
-<jsp:include page="header.jsp"></jsp:include><br>
-
+<body>
 <form onsubmit="register()">
+<div class="container">
 <h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
-<h2  style="color:red;">Registration Details</h2>
-<h2 style="color:blue;">Please Enter your Details Below :</h2>
-<label style="font-family:verdana;">Name:</label>
-<input type="text" name="name" id="name" placeholder="Enter name" required autofocus />
-<br/>
-<label style="font-family:verdana;">Mobile Number:</label>
-<input type="tel" name="mobile" id="mobile" placeholder="Enter phone_number" required  />
-<br/>
-<label style="font-family:verdana;">Set Password:</label>
-<input type="password" name="password" id="password" placeholder="Enter Password"  required />
-<br/>
-<input type="submit" value="Submit" class="btn btn-success" onclick="register()">
-<input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = 'index.jsp';"><br>
-</form>
+<h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+<hr>
+    <label for="name"><b>Name</b></label>
+    <input type="text" name="name" id="name" placeholder="Enter name" required autofocus />
 
+    <label for="mobile"><b>Mobile Number:</b></label>
+    <input type="tel" name="mobile" id="mobile" placeholder="Enter phone_number" required  /><br>
+
+    <label for="password"><b>Set Password:</b></label>
+    <input type="password" name="password" id="password" placeholder="Enter Password"  required /><br/><br/><hr>
+    <hr>
+<input type="submit" value="Register" class="btn btn-success" onclick="register()">
+<input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = '?pageName=home.jsp';"><br><br>
+</div>
+<div class="container signin">
+<label style="font-family:verdana;">Already have an account?<a href = "?pageName=login.jsp">Sign in.</a><br><br></label></div>
+</form>
 </body>
 </html>

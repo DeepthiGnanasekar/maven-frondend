@@ -1,9 +1,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript">
 function admin()
 {
@@ -18,29 +16,29 @@ function admin()
     var data= JSON.parse(response);
     if ( data.errorMessage == null) {
     	alert("Login successfully");
-    	window.location.href= "adminSetUp.jsp";
+    	window.location.href= "?pageName=adminSetUp.jsp";
     }
     else
     	{
     	alert("Invalid Crendentials...!!!");
-     	window.location.href= "index.jsp";
+     	window.location.href= "?pageName=index.jsp";
     	}
-       
     });
 }
 </script>
 </head>
-<body style="text-align:center;">
+<body>
 <form onsubmit="admin()">
-<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
 <h2  style="color:blue;"> Admin Login </h2><br>
+<hr>
 <label style="font-family:verdana;">Name:</label>
-<input type="text" name="name" id="name" placeholder="Enter name" required autofocus />
+<input type="text" name="name" id="name" placeholder="Enter name"  required autofocus />
 <br><br>
 <label style="font-family:verdana;">Password:</label>
-<input type="password" name="password" id="password" placeholder="Enter password" required autofocus />
+<input type="password" name="password" id="password" placeholder="Enter password" required /><hr>
 <br><br>
 <input type="submit" value="Submit" class="btn btn-success" onclick = admin()>
-<input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = 'index.jsp';"><br>
+<input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = '?pageName=home.jsp';"><br>
 </form></body>
 </html>
