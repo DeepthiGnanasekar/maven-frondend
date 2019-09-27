@@ -15,10 +15,11 @@ function canOrder()
     $.get(url, function(response){
     console.log(response);
     var data= JSON.parse(response);
-    if(data.errorMessage != null) {
-    	alert(data.errorMessage);
-    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
-    	window.location.href = "?pageName=adminsetUp.jsp";
+    console.log(data.number);
+    if(data.errorMessage!=null) {
+    	//alert(data.errorMessage);
+    	alert("Please enter valid Mobile Number");
+    	window.location.href = "?pageName=orderCan.jsp";
     }
     else
     	{
@@ -35,7 +36,7 @@ function canOrder()
 <a href = "availability.jsp">Availability_Stock</a><br>
 <h2 style="background-text:green;">(ORDER THE CANS BELOW AND 100)</h2>
 Enter no Of Cans to Order:
-<input type = "number" name = "orderCans" id ="orderCans"><br>
+<input type = "number" name = "orderCans" id ="orderCans" min=1 required><br>
 Enter Your Mobile Number:
 <input type = "number" name = "number" id ="number">
 <p>Are you sure you want to order this quantity of Cans :</p>

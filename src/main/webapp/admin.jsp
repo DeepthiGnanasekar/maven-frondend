@@ -21,7 +21,7 @@ function admin()
     else
     	{
     	alert("Invalid Crendentials...!!!");
-     	window.location.href= "?pageName=index.jsp";
+     	window.location.href= "?pageName=admin.jsp";
     	}
     });
 }

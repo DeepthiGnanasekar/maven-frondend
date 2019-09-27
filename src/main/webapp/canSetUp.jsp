@@ -3,7 +3,7 @@
 <script>
 function logout(){
 	localStorage.clear();
-	window.location.href= "?pageName=index.jsp";
+	window.location.href= "?pageName=home.jsp";
 }</script></head>
 <body style="text-align:center;">
 <h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>

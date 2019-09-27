@@ -21,7 +21,7 @@ function login()
 	    else
 	    	{
 	    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
-	     	window.location.href= "?pageName=home.jsp";
+	     	window.location.href= "?pageName=login.jsp";
 	    	}
 	    });
 }

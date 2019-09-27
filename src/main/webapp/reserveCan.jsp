@@ -14,15 +14,16 @@ function canReserve()
     $.get(url, function(response){
     console.log(response);
     var data= JSON.parse(response);
+    console.log(data.number);
     if(data.errorMessage != null) {
-    	alert(data.errorMessage);
-    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
-    	window.location.href = "?pageName=adminsetUp.jsp";
+    	//alert(data.errorMessage);
+    	aalert("Please enter valid Mobile Number");
+    	window.location.href = "?pageName=reserveCan.jsp";
     }
     else
     	{
     	alert("Your cans has been Reserved...!!! You can Order the Cans at any Time...!!!Thank You for Using Our Services...!!!");
-    	window.location.href = "?pageName=index.jsp";
+    	window.location.href = "?pageName=home.jsp";
     	}
     });
 }
