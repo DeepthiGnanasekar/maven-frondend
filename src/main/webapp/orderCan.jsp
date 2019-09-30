@@ -17,8 +17,7 @@ function canOrder()
     var data= JSON.parse(response);
     console.log(data.number);
     if(data.errorMessage!=null) {
-    	//alert(data.errorMessage);
-    	alert("Please enter valid Mobile Number");
+         alert(data.errorMessage);
     	window.location.href = "?pageName=orderCan.jsp";
     }
     else
@@ -32,15 +31,14 @@ function canOrder()
 </head>
 <body>
 <form onsubmit = "canOrder()">
-<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
-<a href = "availability.jsp">Availability_Stock</a><br>
-<h2 style="background-text:green;">(ORDER THE CANS BELOW AND 100)</h2>
-Enter no Of Cans to Order:
-<input type = "number" name = "orderCans" id ="orderCans" min=1 required><br>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br>
+<a href = "availability.jsp">Availability_Stock</a><br><br>
+Enter Number Of Cans to Order:
+<input type = "number" name = "orderCans" id ="orderCans" min="1" required><br><br>
 Enter Your Mobile Number:
-<input type = "number" name = "number" id ="number">
+<input type = "number" name = "number" id ="number"><br><br>
 <p>Are you sure you want to order this quantity of Cans :</p>
-<input type = "submit" value = "Yes" class="btn btn-success" onclick=canOrder()>
+<input type = "submit" value = "Yes" class="btn btn-success">
 <input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = '?pageName=canSetUp.jsp';">
 </form></body>
 </html>

@@ -16,8 +16,7 @@ function canReserve()
     var data= JSON.parse(response);
     console.log(data.number);
     if(data.errorMessage != null) {
-    	//alert(data.errorMessage);
-    	aalert("Please enter valid Mobile Number");
+    	alert(data.errorMessage);
     	window.location.href = "?pageName=reserveCan.jsp";
     }
     else
@@ -30,15 +29,14 @@ function canReserve()
 </script>
 <body>
 <form onsubmit="canReserve()">
-<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
-<a href = "availability.jsp">Availability_Stock</a><br>
-<h2 style="background-text:green;">(RESERVE THE CANS BELOW AND 100)</h2>
-Enter No Of Cans to reserve:
-<input type = "number" name = "reserveCans" id ="reserveCans"><br>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br>
+<a href = "availability.jsp">Availability_Stock</a><br><br>
+Enter Number Of Cans to reserve:
+<input type = "number" name = "reserveCans" id ="reserveCans" min="1"><br><br>
 Enter Your Mobile Number:
-<input type = "number" name = "number" id ="number">
+<input type = "number" name = "number" id ="number"><br><br>
 <p>Are you sure you want to reserve this quantity of Cans :</p>
-<input type = "button" value = "Yes" class="btn btn-success" onclick=canReserve()>
+<input type = "submit" value = "Yes" class="btn btn-success">
 <input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = '?pageName=canSetUp.jsp';">
 </form></body>
 </html>
