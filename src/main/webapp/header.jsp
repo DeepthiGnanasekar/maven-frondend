@@ -44,13 +44,13 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item ">
-        <a class="nav-link" href="?pageName=index.jsp">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=home.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
     <li class="nav-item ">
-        <a class="nav-link" href="?pageName=admin.jsp">Admin_Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=admin.jsp">Admin Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="?pageName=login.jsp">User_Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=login.jsp">User Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="?pageName=register.jsp">Register<span class="sr-only">(current)</span></a>

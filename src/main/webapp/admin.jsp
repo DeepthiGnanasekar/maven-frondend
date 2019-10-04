@@ -28,6 +28,7 @@ function admin()
 </script>
 </head>
 <body>
+<div class="container">
 <form onsubmit="admin()">
 <h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
 <h2  style="color:blue;"> Admin Login </h2><br>
@@ -40,5 +41,6 @@ function admin()
 <br><br>
 <input type="submit" value="Submit" class="btn btn-success" onclick = admin()>
 <input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = '?pageName=home.jsp';"><br>
-</form></body>
+</form>
+</div></body>
 </html>

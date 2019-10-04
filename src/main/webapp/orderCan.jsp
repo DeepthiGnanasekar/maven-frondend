@@ -22,8 +22,14 @@ function canOrder()
     }
     else
     	{
-    	alert("Your Order has been Sucessfully Placed...!!!");
-    	window.location.href = "?pageName=home.jsp";
+    	var r = confirm("Are you sure you want to order this quantity of Cans? :");
+    	  if (r == true) {
+    		  alert("Your Order has been Sucessfully Placed...!!!");
+    	    	window.location.href = "?pageName=home.jsp";
+    	  } else {
+    		  alert("Your reservation is not Done...!!!");
+        	window.location.href = "?pageName=orderCan.jsp";
+    	  }
     	}
     });
 }
@@ -37,7 +43,6 @@ Enter Number Of Cans to Order:
 <input type = "number" name = "orderCans" id ="orderCans" min="1" required><br><br>
 Enter Your Mobile Number:
 <input type = "number" name = "number" id ="number"><br><br>
-<p>Are you sure you want to order this quantity of Cans :</p>
 <input type = "submit" value = "Yes" class="btn btn-success">
 <input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = '?pageName=canSetUp.jsp';">
 </form></body>

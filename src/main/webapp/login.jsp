@@ -28,6 +28,7 @@ function login()
 </script>
 </head>
 <body style="text-align:center;">
+<div class="container">
 <form onsubmit="login()">
 <h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
 <h2 style="color:blue;">User Login </h2><br>
@@ -38,5 +39,6 @@ function login()
 <input type="submit"  value="Submit" class="btn btn-success"onclick=login()>
 <input type="button"  value="Cancel" class="btn btn-danger" onclick="window.location.href = '?pageName=home.jsp';">
 </form>
+</div>
 </body>
 </html>

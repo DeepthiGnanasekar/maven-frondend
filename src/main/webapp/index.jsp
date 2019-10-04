@@ -8,7 +8,7 @@
 <jsp:include page ="header.jsp"></jsp:include>
 <div class="view" id="view">
        <%
-           String pageName = request.getParameter("pageName");http:
+           String pageName = request.getParameter("pageName");
            if (pageName == null || "".equals(pageName)) {
                pageName = "home.jsp";
            }

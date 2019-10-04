@@ -5,8 +5,8 @@
 <div class="c">Water is Life!!!</div>
 <div class="c">Clean Water means Health...!!!</div>
 <div class="c">And we care your health- Revature WaterCan Services...!!!</div><br><br>
-<a class="anchor-style" href="?pageName=admin.jsp">Admin_Login</a><br>
-<a class="anchor-style" href="?pageName=login.jsp">User_Login</a><br>
+<a class="anchor-style" href="?pageName=admin.jsp">Admin Login</a><br>
+<a class="anchor-style" href="?pageName=login.jsp">User Login</a><br>
 <a class="anchor-style" href="?pageName=register.jsp">Register</a>
 </form>
 </div>

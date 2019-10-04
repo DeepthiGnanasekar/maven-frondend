@@ -3,7 +3,46 @@
 <head>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
-
+function validateName()
+{
+var name=document.getElementById("name").value;
+var nameRegex=/^[A-Za-z]*$/;
+if(nameRegex.test(name))
+{
+document.getElementById("namelocation").innerHTML="";
+}
+else
+{
+document.getElementById("message").innerHTML="Name should contain alphabets only";
+document.getElementById("name").focus();
+}
+}
+function validatePhoneNumber()
+{
+var phoneNumber=document.getElementById("mobile").value;
+var phoneNumberRegex=/^[0-9]*$/;
+if(phoneNumberRegex.test(phoneNumber))
+{
+document.getElementById("phoneNumberlocation").innerHTML="";
+}
+else
+{
+document.getElementById("message").innerHTML="Enter valid phone number";
+}
+}
+function validatePassword()
+{
+var password=document.getElementById("password").value;
+var passwordRegex=/^[A-Za-z0-9~!@#$%^&()-_=+{}|,;:<>/]*$/;
+if(passwordRegex.test(password))
+{
+document.getElementById("passwordlocation").innerHTML="";
+}
+else
+{
+document.getElementById("message").innerHTML="Password should contain alphabets or numbers";
+}
+}
 function register()
 {
 	event.preventDefault();
@@ -36,15 +75,16 @@ function register()
 <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
 <hr>
-    <label for="name"><b>Name</b></label>
-    <input type="text" name="name" id="name" placeholder="Enter name" required autofocus />
-
-    <label for="mobile"><b>Mobile Number:</b></label>
-    <input type="tel" name="mobile" id="mobile" placeholder="Enter phone_number" required  /><br>
-
-    <label for="password"><b>Set Password:</b></label>
-    <input type="password" name="password" id="password" placeholder="Enter Password"  required /><br/><br/><hr>
-    <hr>
+<div id="message" style="color:red"></div>
+    <label for="name"><b>Name :</b></label>
+    <input type="text" name="name" id="name" placeholder="Enter name" onkeyup="validateName()" required autofocus /><br>
+   <span id="namelocation" ></span>
+    <label for="mobile"><b>Mobile Number :</b></label>
+    <input type="tel" name="mobile" id="mobile" placeholder="Enter phone_number" onkeyup="validatePhoneNumber()" required  /><br>
+    <span id="phoneNumberlocation" style="color:red"></span>
+    <label for="password"><b>Set Password :</b></label>
+    <input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="validatePassword()" required /><br/><br/>
+    <span id="passwordlocation" style="color:red"></span><hr>
 <input type="submit" value="Register" class="btn btn-success" onclick="register()">
 <input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = '?pageName=home.jsp';"><br><br>
 </div>
