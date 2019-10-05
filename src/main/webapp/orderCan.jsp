@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
-
 function canOrder()
 {
 	event.preventDefault();
@@ -22,7 +18,7 @@ function canOrder()
     }
     else
     	{
-    	var r = confirm("Are you sure you want to order this quantity of Cans? :");
+    	var r = confirm("Are you sure you want to order this quantity of Cans ? :");
     	  if (r == true) {
     		  alert("Your Order has been Sucessfully Placed...!!!");
     	    	window.location.href = "?pageName=home.jsp";

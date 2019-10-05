@@ -21,7 +21,7 @@ function canReserve()
     }
     else
     	{
-    	var r = confirm("Are you sure you want to order this quantity of Cans? :");
+    	var r = confirm("Are you sure you want to order this quantity of Cans ? :");
   	  if (r == true) {
   		alert("Your cans has been Reserved...!!! You can Order the Cans at any Time...!!!Thank You for Using Our Services...!!!");
     	window.location.href = "?pageName=home.jsp";

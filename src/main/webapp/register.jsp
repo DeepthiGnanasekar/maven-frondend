@@ -3,6 +3,16 @@
 <head>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
+
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
 function validateName()
 {
 var name=document.getElementById("name").value;
@@ -27,7 +37,7 @@ document.getElementById("phoneNumberlocation").innerHTML="";
 }
 else
 {
-document.getElementById("message").innerHTML="Enter valid phone number";
+document.getElementById("message").innerHTML="Mobile Number should contain numbers only";
 }
 }
 function validatePassword()
@@ -40,7 +50,7 @@ document.getElementById("passwordlocation").innerHTML="";
 }
 else
 {
-document.getElementById("message").innerHTML="Password should contain alphabets or numbers";
+document.getElementById("message").innerHTML="Password should contain atleast one upper case alphabet,one lower case alphabet,atleast one number,atleast one special character and should be less than 15 and more than 8 characters in length";
 }
 }
 function register()
@@ -83,7 +93,8 @@ function register()
     <input type="tel" name="mobile" id="mobile" placeholder="Enter phone_number" onkeyup="validatePhoneNumber()" required  /><br>
     <span id="phoneNumberlocation" style="color:red"></span>
     <label for="password"><b>Set Password :</b></label>
-    <input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="validatePassword()" required /><br/><br/>
+    <input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="validatePassword()" required />
+    <input type="checkbox" onclick="myFunction()">Show Password<br/><br/>
     <span id="passwordlocation" style="color:red"></span><hr>
 <input type="submit" value="Register" class="btn btn-success" onclick="register()">
 <input type="button" value="Cancel" class="btn btn-danger"  onclick="window.location.href = '?pageName=home.jsp';"><br><br>
