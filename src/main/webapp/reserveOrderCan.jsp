@@ -5,6 +5,9 @@
 </head>
 <body>
 <script type="text/javascript">
+function goBack() {
+	  window.history.back();
+	}
 function canReserveOrder()
 {
 alert("Your reserved cans has been Ordered Sucessfully...!!!");
@@ -14,6 +17,7 @@ window.location.href = "?pageName=canSetUp.jsp";}
 <p>Do you want to order your reserved Cans :</p>
 <input type = "button" value = "Yes" class="btn btn-success" onclick=canReserveOrder()>
 <input type = "button" value = "No" class="btn btn-danger" onclick="window.location.href = '?pageName=canSetUp.jsp';">
-<input type = "button" value = "Modify the reserve" class="btn btn-danger" onclick="window.location.href = '?pageName=reserveSetUp.jsp';">
+<input type = "button" value = "Modify the reserve" class="btn btn-danger" onclick="window.location.href = '?pageName=reserveSetUp.jsp';"><br><br>
+<button onclick="goBack()" class="btn btn-warning">Go Back</button>
 </body>
 </html>

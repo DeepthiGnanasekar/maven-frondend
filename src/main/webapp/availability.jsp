@@ -8,16 +8,17 @@
 <script type="text/javascript">
 function viewStock()
 {
-   var url = "http://localhost:8080/maven-api/ViewStockServlet";
+   //var url = "http://localhost:8080/maven-api/ViewStockServlet";
+   var url = "http://localhost:9000/viewStock?";
    $.getJSON(url, function(response){
-       //console.log(response);
+      console.log(response);
        var data = response;
        var content="";
        document.getElementById("stock").innerHTML="";
        for(let stock of data){
            content += "<tr>";
            content += "<td>" + stock.availability_List + "</td>";
-           content += "<td>" + stock.date.day+"-"+stock.date.month+"-"+stock.date.year + "</td>";
+           content += "<td>" + stock.date + "</td>";
            content += "</tr>";
        }
        document.getElementById("stock").innerHTML = content;
@@ -31,8 +32,8 @@ function viewStock()
        <table border="1" class="table table-condensed">
            <thead>
                <tr>
-                   <th>cans_avail</th>
-                   <th>date</th>
+                   <th>AVAILABILITY CANS</th>
+                   <th>DATE&TIME</th>
                </tr>
            </thead>
            <tbody id="stock">

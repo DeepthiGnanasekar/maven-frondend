@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
@@ -17,21 +15,24 @@ function login()
 	var phone_number = document.getElementById("number").value;
 	var password=document.getElementById("password").value;
 	var formData = "number=" +phone_number + "&password="+ password;
-	var url = "http://localhost:8080/maven-api/LoginServlet?" +formData;
-	$.get(url, function(response){
+	//var url = "http://localhost:8080/maven-api/LoginServlet?" +formData;
+	var url = "http://localhost:9000/login?" +formData;
+	$.post(url).then(function(response){
 	    console.log(response);
 	    localStorage.setItem("LOGGED_IN_USER",response);
-	    var data=JSON.parse(response);
+	    var data=response;
 	    	if(data.errorMessage== null){
 	    		alert("Login successfully");
 	    		window.location.href= "?pageName=canSetUp.jsp";
 	    	}
-	    else
-	    	{
-	    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
-	     	window.location.href= "?pageName=login.jsp";
-	    	}
-	    });
+	    },
+	    function(error){
+		    console.log(error);
+		    var info=error.responseJSON.message;
+		    	if( info!= null){		    		
+		    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
+		    	}
+		    });
 }
 </script>
 </head>

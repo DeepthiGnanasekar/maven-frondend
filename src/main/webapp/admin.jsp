@@ -1,5 +1,3 @@
-<!DOCTYPE>
-<html>
 <head>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -9,21 +7,25 @@ function admin()
 	var name = document.getElementById("name").value;
 	var password = document.getElementById("password").value;
 	var formData ="name=" +name + "&password="+ password;
-	var url = "http://localhost:8080/maven-api/AdminServlet?" + formData;
+	//var url = "http://localhost:8080/maven-api/AdminServlet?" + formData;
+	var url = "http://localhost:9000/adminLogin?" +formData;
     console.log(url);
-    $.get(url, function(response){
-    console.log(response);
-    var data= JSON.parse(response);
-    if ( data.errorMessage == null) {
-    	alert("Login successfully");
-    	window.location.href= "?pageName=adminSetUp.jsp";
-    }
-    else
-    	{
-    	alert("Invalid Crendentials...!!!");
-     	window.location.href= "?pageName=admin.jsp";
-    	}
-    });
+    $.post(url).then(function(response){
+	    console.log(response);
+	    localStorage.setItem("LOGGED_IN_USER",response);
+	    var data=response;
+	    	if(data.errorMessage== null){
+	    		alert("Login successfully");
+	        	window.location.href= "?pageName=adminSetUp.jsp";
+	    	}
+	    },
+	    function(error){
+		    console.log(error);
+		    var info=error.responseJSON.message;
+		    	if( info!= null){		    		
+		    	alert("Invalid Crendentials...!!! Please enter Valid Details...!!!");
+		    	}
+		    });
 }
 </script>
 </head>
