@@ -14,26 +14,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="?pageName=home.jsp">Home<span class="sr-only">(current)</span></a>
       </li>
     <li class="nav-item ">
-        <a class="nav-link" href="?pageName=availability.jsp">View Stock <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=availability.jsp">Availability Stock <span class="sr-only">(current)</span></a>
       </li>
     <li class="nav-item ">
-        <a class="nav-link" href="?pageName=orderCan.jsp">Order Cans <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=viewOrders.jsp">View Orders<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="?pageName=reserveCan.jsp">Reserve Cans <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="?pageName=reserveOrderCan.jsp">Reserve Order Cans<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="?pageName=cancel.jsp">Cancel Order Cans<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="?pageName=contact.jsp">Contact Us<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="?pageName=viewReserveOrders.jsp">View Reserved Orders<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>

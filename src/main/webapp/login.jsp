@@ -1,4 +1,5 @@
 <head>
+<jsp:include page ="header.jsp"></jsp:include>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 function myFunction() {
@@ -19,8 +20,9 @@ function login()
 	var url = "http://localhost:9000/login?" +formData;
 	$.post(url).then(function(response){
 	    console.log(response);
-	    localStorage.setItem("LOGGED_IN_USER",response);
+	    localStorage.setItem("LOGGED_IN_USER",JSON.stringify(response));
 	    var data=response;
+	    console.log(response.Mobile_Number);
 	    	if(data.errorMessage== null){
 	    		alert("Login successfully");
 	    		window.location.href= "?pageName=canSetUp.jsp";
@@ -48,10 +50,11 @@ function login()
 <span id="phoneNumberlocation" style="color:red"></span>
 <label style="font-family:verdana;">Password:</label>
 <input type="password" name="password" id="password" placeholder="Enter Password"  required />
-<input type="checkbox" onclick="myFunction()">Show Password<br/><br/><br/><br/><hr>
+<input type="checkbox" onclick="myFunction()">Show Password<br/><br/><hr>
 <input type="submit"  value="Submit" class="btn btn-success">
 <input type="button"  value="Cancel" class="btn btn-danger" onclick="window.location.href = '?pageName=home.jsp';">
 </form>
 </div>
 </body>
+
 </html>

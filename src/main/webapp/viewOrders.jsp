@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>UsersList</title>
+<title>ViewOrdersList</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
 function viewStock()
 {
-   var url = "http://localhost:8080/maven-api/ViewStockServlet";
+   //var url = "http://localhost:8080/maven-api/ViewStockServlet";
+   var url = "http://localhost:9000/viewOrders?";
    $.getJSON(url, function(response){
-       //console.log(response);
+      console.log(response);
        var data = response;
        var content="";
-       document.getElementById("orderStock").innerHTML="";
+       document.getElementById("stock").innerHTML="";
        for(let stock of data){
            content += "<tr>";
-           content += "<td>" + orderStock.id + "</td>";
-           content += "<td>" + orderStock.Mobile_Number + "</td>";
-           content += "<td>" + orderStock.Ordered_List + "</td>";
-           content += "<td>" + orderStock.Reserved_List + "</td>";
-           content += "<td>" + orderStock.Reserved_Order + "</td>";
-           content += "<td>" + orderStock.STATUS + "</td>";
-           content += "<td>" + orderStock.date.day+"-"+orderStock.date.month+"-"+orderStock.date.year + "</td>";
+           content += "<td>" + stock.id + "</td>";
+           content += "<td>" + stock.number + "</td>";
+           content += "<td>" + stock.quantyList + "</td>";
+           content += "<td>" + stock.status+ "</td>";
+           content += "<td>" + stock.date + "</td>";
            content += "</tr>";
        }
-       document.getElementById("orderStock").innerHTML = content;
+       document.getElementById("stock").innerHTML = content;
    });
 }
 </script>
@@ -36,16 +35,15 @@ function viewStock()
        <table border="1" class="table table-condensed">
            <thead>
                <tr>
-                   <th>id</th>
-                   <th>Mobile_Number</th>
-                    <th>Ordered_List</th>
-                    <th>Reserved_List</th>
-                    <th>Reserved_Order</th>
+               <h2><b>VIEW ORDERS</b></h2><br>
+               <th>Order ID</th>
+                   <th>MOBILE NUMBER</th>
+                   <th>ORDERED CANS</th>
                    <th>STATUS</th>
-                   <th>date</th>
+                   <th>DATE&TIME</th>
                </tr>
            </thead>
-           <tbody id="orderStock">
+           <tbody id="stock">
            </tbody>
        </table>
    </div>
@@ -60,3 +58,6 @@ function goBack() {
 <button onclick="goBack()" class="btn btn-warning">Go Back</button>
 </body>
 </html>
+
+
+

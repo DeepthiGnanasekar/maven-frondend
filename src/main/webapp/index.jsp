@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="text-align: center">
-<jsp:include page ="header.jsp"></jsp:include>
 <div class="view" id="view">
        <%
            String pageName = request.getParameter("pageName");

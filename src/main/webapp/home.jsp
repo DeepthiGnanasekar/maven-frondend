@@ -1,4 +1,4 @@
-
+<jsp:include page ="header.jsp"></jsp:include>
 <div class="img">
 <form>
 <h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br><br>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>UsersList</title>
+<title>ViewOrdersList</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
@@ -9,7 +9,7 @@
 function viewStock()
 {
    //var url = "http://localhost:8080/maven-api/ViewStockServlet";
-   var url = "http://localhost:9000/viewStock?";
+   var url = "http://localhost:9000/userviewReserveOrders?";
    $.getJSON(url, function(response){
       console.log(response);
        var data = response;
@@ -17,7 +17,11 @@ function viewStock()
        document.getElementById("stock").innerHTML="";
        for(let stock of data){
            content += "<tr>";
-           content += "<td>" + stock.availability_List + "</td>";
+           content += "<td>" + stock.id + "</td>";
+           content += "<td>" + stock.number + "</td>";
+           content += "<td>" + stock.reservedList + "</td>";
+           content += "<td>" + stock.reservedOrder + "</td>";
+           content += "<td>" + stock.status+ "</td>";
            content += "<td>" + stock.date + "</td>";
            content += "</tr>";
        }
@@ -27,13 +31,17 @@ function viewStock()
 </script>
 </head>
 <body style="text-align: center">
-<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1><br><br>
+<h1 style="background-color:SkyBlue;">Welcome to Revature WaterCan Plant Services</h1>
    <div id="stock-section">
        <table border="1" class="table table-condensed">
            <thead>
                <tr>
-               <h2><b>AVAILABILITY STOCK</b></h2><br>
-                   <th>AVAILABILITY CANS</th>
+               <h2><b>VIEW RESERVED ORDERS</b></h2><br>
+               <th>Reserve ID</th>
+                   <th>MOBILE NUMBER</th>
+                   <th>RESERVED CANS</th>
+                     <th>RESERVED ORDERED CANS</th>
+                   <th>STATUS</th>
                    <th>DATE&TIME</th>
                </tr>
            </thead>

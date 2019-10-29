@@ -1,4 +1,5 @@
 <head>
+<jsp:include page ="header.jsp"></jsp:include>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script>
 	function myFunction() {
@@ -9,35 +10,32 @@
 			x.type = "password";
 		}
 	}
-
 	function validateName() {
-		var name = document.getElementById("name").value;
-		var nameRegex = /^[A-Za-z]*$/;
-		if (nameRegex.test(name)) {
-			document.getElementById("namelocation").innerHTML = "";
-		} else {
-			document.getElementById("message").innerHTML = "Name should contain alphabets only";
-			document.getElementById("name").focus();
-		}
-	}
-	function validatePhoneNumber() {
-		var phoneNumber = document.getElementById("mobile").value;
-		var phoneNumberRegex = /^[0-9]*$/;
-		if (phoneNumberRegex.test(phoneNumber)) {
-			document.getElementById("phoneNumberlocation").innerHTML = "";
-		} else {
-			document.getElementById("message").innerHTML = "Mobile Number should contain numbers only";
-		}
-	}
-	function validatePassword() {
-		var password = document.getElementById("password").value;
-		var passwordRegex = /^[A-Za-z0-9~!@#$%^&()-_=+{}|,;:<>/]*$/;
-		if (passwordRegex.test(password)) {
-			document.getElementById("passwordlocation").innerHTML = "";
-		} else {
-			document.getElementById("message").innerHTML = "Password should contain atleast one upper case alphabet,one lower case alphabet,atleast one number,atleast one special character and should be less than 15 and more than 8 characters in length";
-		}
-	}
+         var name = document.getElementById("name").value;
+         var nameRegex = /^[A-Za-z]*$/;
+         if (nameRegex.test(name)) {
+             document.getElementById("namelocation").innerHTML = "";
+ 			document.getElementById("message").innerHTML = "";
+             document.getElementById("Button").disabled = false;
+         } else {
+             document.getElementById("message").innerHTML = "Name should contain alphabets only";
+             document.getElementById("Button").disabled = true;
+         }
+     }
+     function validatePhoneNumber() {
+         var phoneNumber = document.getElementById("mobile").value;
+         var phoneNumberRegex = /^([0][1-9]\d{9}$|^[1-9]\d{9})*$/;
+         if (phoneNumberRegex.test(phoneNumber)) {
+             document.getElementById("phoneNumberlocation").innerHTML = "";
+ 			document.getElementById("message").innerHTML = "";
+             document.getElementById("Button").disabled = false;
+         }
+         else {
+             document.getElementById("message").innerHTML = "Enter valid phone number";
+             document.getElementById("Button").disabled = true;
+         }
+     }
+
 	function register() {
 		event.preventDefault();
 		var name = document.getElementById("name").value;
@@ -54,12 +52,9 @@
 								window.location.href = "?pageName=home.jsp";
 							} 
 						},
-						function(response) {
-							var data = response.responseJSON;
-							if (data.message != null) {
-								alert(data.message);
+						function(error) {
+								alert("This Account is already Existing (or) Invalid Details...Please Enter Valid Details...!!!");
 								window.location.href = "?pageName=register.jsp";
-							} 
 						});
 	}
 </script>
@@ -81,13 +76,13 @@
 				placeholder="Enter phone_number" onkeyup="validatePhoneNumber()"
 				required /><br> <span id="phoneNumberlocation"
 				style="color: red"></span> <label for="password"><b>Set
-					Password :</b></label> <input type="password" name="password" id="password"
-				placeholder="Enter Password" onkeyup="validatePassword()" required />
+					Password :</b></label> <input type="password" name="password" id="password"  name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+				placeholder="Enter Password"  required />
 			<input type="checkbox" onclick="myFunction()">Show Password<br />
 			<br /> <span id="passwordlocation" style="color: red"></span>
 			<hr>
-			<input type="submit" value="Register" class="btn btn-success"
-				onclick="register()"> <input type="button" value="Cancel"
+			<input type="submit" value="Register" class="btn btn-success" id ="Button" disabled
+				> <input type="button" value="Cancel"
 				class="btn btn-danger"
 				onclick="window.location.href = '?pageName=home.jsp';"><br>
 			<br>
