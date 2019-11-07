@@ -28,7 +28,7 @@ function canReserveOrder(person)
 	$.post(url).then(function(response) {
 		   var data = response;
 		       alert("Sucessfully Ordered Your Reserved Water Cans");
-		       window.location.href = "?pageName=index.jsp";
+		       window.location.href = "?pageName=canSetUp.jsp";
 		},
 		function(error) {
 		   var data = error;

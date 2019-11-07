@@ -31,7 +31,7 @@ function checkNumber() {
 			var data = response;
 			alert("Your Order has been Sucessfully Placed...!!!");
 			displayId(data);
-			window.location.href = "?pageName=home.jsp";
+			window.location.href = "?pageName=canSetUp.jsp";
 
 		}, function(error) {
 			var msg = error.responseJSON;

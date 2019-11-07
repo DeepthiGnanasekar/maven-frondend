@@ -35,7 +35,7 @@ function canReserve()
 		console.log(data);
 		alert("Your cans has been Reserved...!!! You can Order the Cans at any Time...!!!Thank You for Using Our Services...!!!");
 		displayId(data);
-		window.location.href = "?pageName=home.jsp";
+		window.location.href = "?pageName=canSetUp.jsp";
 
 	}, function(error) {
 		var msg = error.responseJSON;

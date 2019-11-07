@@ -35,7 +35,19 @@
              document.getElementById("Button").disabled = true;
          }
      }
-
+function validatePassword(){
+	 var password = document.getElementById("password").value;
+	 if(password.matches(".[0-9]{1,}.") && password.matches(".[a-z]{1,}.") && password.matches(".[A-Z]{1,}.") && password.matches(".[@#$]{1,}.")
+             && password.length() >= 6 && password.length() <= 8){document.getElementById("passwordlocation").innerHTML = "";
+  			document.getElementById("message").innerHTML = "";
+            document.getElementById("Button").disabled = false;
+        }
+        else {
+            document.getElementById("message").innerHTML = "Enter valid password";
+            document.getElementById("Button").disabled = true;
+        }
+}
+     
 	function register() {
 		event.preventDefault();
 		var name = document.getElementById("name").value;
@@ -76,7 +88,7 @@
 				placeholder="Enter phone_number" onkeyup="validatePhoneNumber()"
 				required /><br> <span id="phoneNumberlocation"
 				style="color: red"></span> <label for="password"><b>Set
-					Password :</b></label> <input type="password" name="password" id="password"  name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					Password :</b></label> <input type="password" name="password" id="password" onkeyup="validatePassword()" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
 				placeholder="Enter Password"  required />
 			<input type="checkbox" onclick="myFunction()">Show Password<br />
 			<br /> <span id="passwordlocation" style="color: red"></span>
