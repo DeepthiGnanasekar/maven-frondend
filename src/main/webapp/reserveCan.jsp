@@ -43,7 +43,7 @@ function canReserve()
     });
 }
 function displayId(id) {
-    alert(document.getElementById("id").innerHTML = "Your Order Id is : " + id+"...!!!");
+    alert(document.getElementById("id").innerHTML = "Your Reserve Id is : " + id+"...!!!");
 }
 function goBack() {
 	  window.history.back();
